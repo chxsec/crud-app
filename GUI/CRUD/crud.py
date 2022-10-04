@@ -15,7 +15,7 @@ def insertData():
         messagebox.showwarning("Cannot Insert", "All the fields are required!")
     else:  # Insert data into the empDetails table
         myDB = mysql.connector.connect(
-            host="localhost", user="debian-sys-maint", passwd="M4ZHdM0wwlQFGNEB", database="employee")
+            host="localhost", user="root", passwd="YOUR_PASSWORD", database="employee")
         myCur = myDB.cursor()
         myCur.execute("insert into empDetails values('" + id +
                       "', '" + name + "', '" + dept + "' )")
@@ -42,7 +42,7 @@ def updateData():
         messagebox.showwarning("Cannot Update", "All the fields are required!")
     else:  # Update empDetails table
         myDB = mysql.connector.connect(
-            host="localhost", user="debian-sys-maint", passwd="M4ZHdM0wwlQFGNEB", database="employee")
+            host="localhost", user="root", passwd="YOUR_PASSWORD", database="employee")
         myCur = myDB.cursor()
         myCur.execute("update empDetails set empName='" + name +
                       "', empDept='" + dept + "' where empId='" + id + "'")
@@ -65,7 +65,7 @@ def getData():
             "Fetch Status", "Please provide the Emp ID to fetch the data")
     else:  # Fill the entry field from database
         myDB = mysql.connector.connect(
-            host="localhost", user="debian-sys-maint", passwd="M4ZHdM0wwlQFGNEB", database="employee")
+            host="localhost", user="root", passwd="YOUR_PASSWORD", database="employee")
         myCur = myDB.cursor()
         myCur.execute("select * from empDetails where empID='" +
                       enterId.get() + "'")
@@ -85,7 +85,7 @@ def deleteData():
             "Cannot Delete", "Please provide the Emp ID to delete the data")
     else:  # Delete the selected record matching the empID
         myDB = mysql.connector.connect(
-            host="localhost", user="debian-sys-maint", passwd="M4ZHdM0wwlQFGNEB", database="employee")
+            host="localhost", user="root", passwd="YOUR_PASSWORD", database="employee")
         myCur = myDB.cursor()
         myCur.execute("delete from empDetails where empID='" +
                       enterId.get() + "'")
@@ -104,7 +104,7 @@ def deleteData():
 #  Show method to show the data
 def show():
     myDB = mysql.connector.connect(
-        host="localhost", user="debian-sys-maint", passwd="M4ZHdM0wwlQFGNEB", database="employee")
+        host="localhost", user="root", passwd="YOUR_PASSWORD", database="employee")
     myCur = myDB.cursor()
     myCur.execute("select * from empDetails")
     rows = myCur.fetchall()
